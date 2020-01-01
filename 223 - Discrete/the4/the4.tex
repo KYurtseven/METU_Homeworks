@@ -1,0 +1,206 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Koray Can Yurtseven\\
+Id Number :  2099547\\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+\subsection*{a.}
+Every relation on a set of $n$ elements can be thought as an $nxn$ matrix.\\$\newline$
+For a symmetrix relation the Matrix is also symmetric. Hence, we have $n^2$ elements, distrubited as $n$ in Principal Diagonal, and $\frac{n^2-n}{2}$ in upper and lower triangles each.\\$\newline$
+Here we can fill $0$ or $1$ in any one of the triangle and the other half will be created after copying the elements. Also the diagonal can be filled with $0$ or $1$.\\$\newline$
+Therefore, we have $\frac{n^2-n}{2}$ + $n$ = $\frac{n^2+n}{2}$ values with choice $0$ and $1$, and remaining are bound to get a single value.\\$\newline$
+So, it is 
+\begin{align*}
+2^{\frac{n(n+1)}{2}}
+\end{align*}
+\subsection*{b.}
+Suppose that we’re building an antisymmetric relation $R$ on $A$.Suppose that $a,b$ $\in$ $A$, with $a\ne b$; $R$ must not contain both $(a,b)$ and $(b,a)$,but it may contain either of these ordered pairs without the other, and it may contain neither of them. There is no restriction on pairs of the form $(a,a)$.\\$\newline$
+$i.$ for each of the $\binom{n}2$ two-element subsets $\{a,b\}$ of $A$ we have $3$ allowable choices of of ordered pairs to put into an antisymmetric relation: we can use $(a,b)$ alone, $(b,a)$ alone, or neither. This is equal to $3^{\binom{n}{2}}$.\\$\newline$
+$ii$ In addition we may keep any subset of the n pairs of the form $(a,a)$. This is equal to $2^{n}$. \\$\newline$
+Using product rule, the answer is: 
+\begin{align*}
+2^{n} 3^{\binom{n}{2}}\\
+\end{align*}
+\subsection*{c.}
+To be reflexive, it must include all pairs $(a,a)$ with $a$ $\in$ $A$. To be symmetric, whenever it includes a pair $(a,b)$, it must include the pair $(b,a)$. So it amounts to choosing which $2$-element subsets from $A$ will correspond to associated pairs. If we pick a subset ${a,b}$ with two elements, it corresponds to adding both $(a,b)$ and $(b,a)$ to our relation.\\ $\newline$
+How many $2$-element subsets does $A$ have? Since $A$ has $n$ elements, it has exactly $\binom{n}{2}$ subsets of size $2$.$\newline$
+So now we want to pick a collection of subsets of $2$-elements. There are $\binom{n}{2}$ of them, and we can either pick or not pick each of them. So we have
+\begin{align*}
+2^{\binom{n}{2}}
+\end{align*}
+ways of picking the pairs of distinct elements that will be related.
+\subsection*{d.}
+It's impossible for a relation to be simultaneously reflexive and irreflexive, so if we count the number of reflexive relations, and the number of irreflexive relations, then we will not have counted the same relation twice, and we can just subtract this number from total number of relations.\\ $\newline$
+In both the reflexive and irreflexive cases, essentially membership in the relation is decided for all pairs of the form {x, x}. This leaves $n^2 - n$ pairs to decide, giving us, in each case: 
+\begin{align*}
+2^{n^2 - n} 
+\end{align*}
+choices of relation.\\ $\newline$
+The number of relations that are either reflexive or irreflexive will be the sum: 
+\begin{align*}
+2^{n^2 - n} + 2^{n^2 - n} = 2^{n^2 - n + 1} 
+\end{align*}
+If we subtract this from the total number of relations, $2^{n^2}$, then we get the number of relations that are neither reflexive or irreflexive: 
+\begin{align*}
+2^{n^2} - 2^{n^2 - n + 1}
+\end{align*}
+
+\section*{Answer 2}
+
+\subsection*{a.}
+If $R$ is symmetric, then for any $a$ $\in$ $A$ and $b$ $\in$ $A$,
+\begin{align*}
+(a,b) \in R \rightarrow (b,a) \in R &&\text{by symmetry of }R\\
+                        (a,b) \in R^{-1} &&\text{by definition of }R^{-1}\;,
+\end{align*}
+So,
+\begin{align*}
+R=R^{-1}
+\end{align*}
+
+\subsection*{b.}
+
+\subsection*{c.}
+
+
+
+\section*{Answer 3}
+
+\subsection*{a.}
+$C_n$ is the number of ways to correctly match $n$ pairs of brackets. We denote a (possibly empty) correct string with $c$ and its inverse (where "[" and "]" are exchanged) with $c^+$. Since any $c$ can be uniquely decomposed into $c = [ c1 ] c2$, summing over the possible spots to place the closing bracket immediately gives the recursive definition
+\begin{align*}
+C_0=1 \ and \ C_{n+1}=\sum_{i=0}^{n} C_iC_{n-i}\ for\ n\geq0.
+\end{align*}
+Now let $b$ stand for a balanced string of length $2n$—that is, containing an equal number of "[" and "]"—and $B_n$= ${\binom{2n}{n}}= d_nC_n$with some factor $d_n$ $\geq$ 1. As above, any balanced string can be uniquely decomposed into either [ c ] b or ] $c^+$ [ b, so
+\begin{align*}
+B_{n+1} = 2\sum_{i=0}^{n} B_iC_{n-i}
+\end{align*}
+Also, any incorrect balanced string starts with c ], so
+\begin{align*}
+B_{n+1} - C_{n+1} =\sum_{i=0}^{n}{\binom{2i+1}{i}} C_{n-i} =\sum_{i=0}^{n}\frac{2i+1}{i+1}B_iC_{n-i} 
+\end{align*}
+Subtracting the above equations and using $B_i$ = $d_i C_i$ gives
+\begin{align*}
+C_{n+1}= 2\sum_{i=0}^{n} d_i C_i C_{n-i} - \sum_{i=0}^{n} \frac{2i+1}{i+1}d_i C_i C_{n-i} = \sum_{i=0}^{n} \frac{d_i}{i+1} C_i C_{n-i}
+\end{align*}
+Comparing coefficients with the original recursion formula for $C_n$ gives $d_i$ = $i$ + 1, so
+\begin{align*}
+C_n = \frac{1}{n+1}\binom{2n}{n}
+\end{align*}
+\subsection*{b.}
+$1$- How many “mountain ranges” can you form with n upstrokes and n downstrokes that all stay above
+the original line?\\ $\newline$
+If we completely ignore whether the path is valid or not, we have $n$ up-strokes that we can choose
+from a collection of 2$n$ available slots. In other words, ignoring path validity, the question is how many ways we can rearrange a collection of $n$ up-strokes and $n$ down-strokes.\\ $\newline$
+The answer is clearly $\binom{2n}{n}$\\ $\newline$
+Now we have to subtract off the bad paths. Every bad path goes below the horizon for the first time at some point, so from that point on, reverse all the strokes—replace up-strokes with downstrokes and vice-versa. It is clear that the new paths will all wind up 2 steps above the horizon, since they consist of $n+1$ up-strokes and $n-1$ down-strokes. Conversely, every path that ends two steps above the horizon must be of this form, so it corresponds to exactly one bad path.\\ $\newline$
+The same number as there are ways to choose the $n+1$ up-strokes from among the 2$n$ total strokes, or
+$\binom{2n}{n+1}$\\ $\newline$
+Let $C_n$ be count of valid mountain ranges; \\ $\newline$
+\begin{align*}
+C_n =\binom{2n}{n} - \binom{2n}{n+1} = \binom{2n}{n} - \frac{n}{n+1} \binom{2n}{n} = \frac{1}{n+1}\binom{2n}{n}.
+\end{align*}
+$2$- Path finding from one point to another in an $n x n$ grid\\ $\newline$
+All such paths have $n$ rightward and $n$ upward steps. Since we can choose which of the 2$n$ steps are upward (or, equivalently, rightward) ones, there are $\binom {2n}{n}$ total monotonic paths of this type.A bad path will cross the main diagonal and touch the next higher (fatal) diagonal. We flip the portion of the path occurring after that touch about that fatal diagonal,this geometric operation amounts to interchanging all the rightward and upward steps after that touch. In the section of the path that is not reflected, there is one more upward step than rightward steps, so the remaining section of the bad path has one more rightward than upward step (because it ends on the main diagonal). When this portion of the path is reflected, it will also have one more upward step than rightward steps. Since there are still 2$n$ steps, there must now be $n+1$ upward steps and $n-1$ rightward steps. So, instead of reaching the target $(n,n)$, all bad paths (after the portion of the path is reflected) will end in location $(n-1,n+1)$. As any monotonic path in the $n-1$ $x$ $n+1$ grid must meet the fatal diagonal, this reflection process sets up a bijection between the bad paths of the original grid and the monotonic paths of this new grid because the reflection process is reversible. The number of bad paths is therefore,
+\begin{align*}
+\binom{n-1+n+1}{n-1} = \binom{2n}{n-1}= \binom{2n}{n+1}
+\end{align*}
+and the number of Catalan paths (i.e., good paths) is obtained by removing the number of bad paths from the total number of monotonic paths of the original grid,
+\begin{align*}
+C_n = \binom{2n}{n} - \binom{2n}{n+1}
+\end{align*}
+\section*{Answer 4}
+
+
+\section*{Answer 5}
+\subsection*{a.}
+Let $P(n)$ be the number of strings not containg two containing two consecutive zeros or two consecutive ones.\\ $\newline$
+We can think about it like this: start with a string of length $n-1$. It's last character is $x$ $\in$ $\{0, 1, 2\}$. If $x = 0$ we have 2 choices for how to finish $\{1, 2\}$, if $x = 1$we have again 2 choices for how to finish $\{0, 2\}$. If $x = 2$ then we have 3 choices for how to finish: $\{0, 1, 2\}$. Let's think about what the end of strings look like. Let $x_{0}$ denote that $n-1$st element is a 0, $x_{1}$ to denote that the $n-1$st element is a 1 and $x_{2}$ to denote that the $n-1$st element is a 2. Strings could en in any of the following ways:
+\begin{align*}
+x_0 1\\
+x_0 2\\
+x_1 0\\
+x_1 2\\
+x_2 2\\
+x_1 0\\
+x_2 0\\
+\end{align*}
+Note that if we group the first 6 of these, we have counted 2$P(n-1)$ strings; this is because every one of the strings of length $n-1$ either ends in a 0,1 or a 2 and we've counted each of those occurrences twice. And, we still need to count the strings that end in $x_2$0 (or the last two digits are 2,0). The number of ways to end in 2,0 is precisely $P(n-2)$ since we can append 2,0 to any string of length $n-2$. Thus all together there are
+\begin{align*}
+P(n) = 2P(n-1)+P(n-2)\\
+where P(0) =0, P(1) =3, P(2) = 7
+\end{align*}
+strings that fit our criteria.
+\subsection*{b.}
+Let $b_n$ be the number of $n$-digit ternary strings which begin with 0 and does not contain 00,11 or 22. Let $c_n$, $d_n$ be the same except starting with 1 or 22 respectively. Let
+\begin{align*}
+t_n=b_n+c_n+d_n
+\end{align*}
+
+be the total number of $n$-digit ternary strings which contain neither 00 nor 11. What we want is
+\begin{align*}
+a_n=3^n-t_n
+\end{align*}
+To find a recurrence for $b_n$ observe that an $n$-digit ternary string which begins with 0 and contains neither 00 nor 11 is\\ $\newline$
+$i$ 0, followed by an $n-1$-digit string which begins with 1 and does not contain 00,11 or 22; or\\ $\newline$
+$ii$ 0, followed by an $n-1$-digit string which begins with 2 and does not contain 00,11 or 22.
+Therefore
+\begin{align*}
+b_n=c_{n-1}+d_{n-1}
+\end{align*}
+similar arguments give
+\begin{align*}
+c_n=b_{n-1}+d_{n-1}\\
+d_n=b_{n-1}+c_{n-1}
+\end{align*}
+Adding all of these gives
+\begin{align*}
+b_n + c_n + d_n &= 2( b_{n-1}+c_{n-1}+d_{n-1})&\\
+t_n &= 2 t_{n-1}&\\
+3^n-a_n &= 2(3^{n-1}-a_{n-1})&\\
+a_n &= 2 a_{n-1} + 3^n - 2x3^{n-1}&\\
+a_n &= 2 a_{n-1} + 3^{n-1}&
+\end{align*}
+where $a_0$ = 0 and $a_1$ = 0.
+\section*{Answer 6}
+There are two basic options:\\ $\newline$
+$i$ All tiles touchting the $n$th coloumn are horizontal. There must be 3 of them, and if we remove them, we get a tiling of a rectangle of size $3x(n-2)$.\\ $\newline$
+$ii$ Exactly one tile touching the $n$th coloumn is vertical. It can either touch the top or the bottom. For each of these two options, if we rome it then we get a tiling of a rectangle of size $3x(n-1)$ with one corner square added. That square must be tiled by a horizontal tile, after whose removal we are left with a tiling of a $3x(n-1)$ rectangle with one corner square removed.\\ $\newline$
+Therefore, the answer is
+\begin{align*}
+f(n) = f(n-2) + 2g(n-1)
+\end{align*}
+where
+\begin{align*}
+g(n) = f(n-1) + g(n-2)
+\end{align*}
+and boundary values for the relations are:
+\begin{align*}
+f(0)=1, f(1)=0, g(0)=0, g(1)=1
+\end{align*}
+
+\end{document}
+
+​
+

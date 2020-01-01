@@ -1,0 +1,52 @@
+findpath fString (Root []) = []
+findpath fString (Root (x:xs)) = findpath fString x ++ p fString xs
+
+findpath fString (Subword node (x:xs))
+        | findpath fString x == [] = if p fString xs == []
+                                     then []
+                                     else ekle node (p fString xs) 
+        | otherwise = if p fString xs == []
+                      then ekle node (findpath fString x)
+                      else ekle node (findpath fString x) ++ ekle node (p fString xs)
+
+findpath fString (Word w) = if fString == w 
+                            then [[w]]
+                            else []
+
+burasi tepe (x:xs) = tepe : (x:xs)
+
+p fString [] = []
+p fString (x:xs) = findpath fString x ++ p fString xs
+
+ekle tepe [] = []
+ekle tepe (x:xs) = (burasi tepe x) : (xs)
+
+allleaves (Root []) = []
+allleaves (Root (x:xs)) = allleaves x ++ p2 xs
+allleaves (Subword node (x:xs)) = allleaves x ++ p2 xs
+allleaves (Word w) = [w]
+
+p2 [] = []
+p2 (x:xs) = allleaves x ++ p2 xs
+
+getAllPaths :: WordTree -> [[String]]
+getAllPaths (Root []) = []
+getAllPaths (Root x) = make (Root x) (allleaves (Root x) ) []
+
+make (Root y)    []     previous=  []
+make (Root []) (x:xs)   previous = []
+make (Root y)   (x:xs)  previous = (make2 (Root y) x previous) : (make  (Root y) xs (make2 (Root y) x previous))
+
+make2  (Root []) fChar previous = []
+make2  (Root x)  fChar previous  = if count_element (findpath fChar (Root x )) == 1 
+                                    then head (findpath fChar (Root x))
+                                     else control (findpath fChar (Root x)) (previous)
+control [] previous = []
+control (x:xs) [] = x
+control (x:xs) previous = if x > previous 
+						  then x
+						  else control xs previous
+
+count_element [] = 0 
+count_element (x:xs) = 1 + count_element xs
+

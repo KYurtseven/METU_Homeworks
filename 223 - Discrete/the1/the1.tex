@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+\usepackage{fitch}
+
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Koray Can Yurtseven \\
+Id Number : 2099547 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+
+\begin{tabular} {| c | c | c| c | c | c | c | c |}
+  \hline
+  
+  p& q & r & p $\rightarrow$ q& q $\rightarrow$ r& (p $\rightarrow$ q) $\land$ (q $\rightarrow$ r)& p$\rightarrow$ r & [(p $\rightarrow$ q) $\land$ (q $\rightarrow$ r)] $\rightarrow$ (p $\rightarrow$ r) 	\\ \hline
+\hline
+				   T & T & T & T & T & T & T &T\\ \hline
+				   T & T & F & T & F & F & F & T\\ \hline
+				   T & F & T & F & T & F & T & T\\ \hline
+				   T & F & F & F & T & F & F & T\\ \hline
+				   F & T & T & T & T & T & T & T\\ \hline
+				   F & T & F & T & F & F & T & T\\ \hline
+				   F & F & T & T & T & T & T & T\\ \hline
+				   F & F & F & T & T & T & T & T\\ \hline
+                   
+
+\end{tabular}\\
+
+
+This proposition is a tautology.\\
+
+
+
+
+\begin{tabular} {| c | c | c | c | c | c | c |}
+ \hline
+ 
+ p & q & p $\lor$ q & $\neg$p& $\neg$p $\land$ (p $\lor$ q)& ($\neg$p $\land$ (p $\lor$ q)) $\rightarrow$ q	& 	$\neg$(($\neg$p $\land$ (p $\lor$ q)) $\rightarrow$ q)	\\ \hline
+ \hline
+				   T & T & T & F & F & T & F\\ \hline
+				   T & F & T & F & F & T & F\\ \hline
+				   F & T & T & T & T & T & F\\ \hline
+				   F & F & F & T & F & T & F\\ \hline	
+                   
+  \end{tabular}\\
+
+This proposition is a contradiction.\\
+
+\section*{Answer 2}
+
+1. (p $\rightarrow$ q) $\land$ (p $\rightarrow$ r) \\
+2. ($\neg$p $\lor$ q) $\land$ ($\neg$p $\lor$ r)    Table 7, 1st eqn. \\
+3. $\neg$p $\lor$ (q $\land$ r) 					Table 6, 7th eqn. \\
+4. (q $\land$ r) $\lor$ $\neg$p						Table 6, 5th eqn. \\
+5. $\neg$(q $\land$ r) $\rightarrow$ $\neg$p		Table 7, 3rd eqn. \\
+6. ($\neg$q $\lor$ $\neg$r) $\rightarrow$ $\neg$p   Table 6, 8th eqn. \\\\
+
+
+\section*{Answer 3}
+A\\
+	a. 	$\exists$x$\forall$y(f(x) $\land$ d(x,y))\\
+    b. 	$\forall$y$\exists$x(d(x,y) $\rightarrow$ f(x))\\
+    c.  $\exists$y$\forall$x(d(x,y) $\rightarrow$ $\neg$f(x))\\
+    d.  $\exists$y(d(x,y) $\land$ $\forall$w($\neg$d(w,y) $\land$ x $\ne$ w))\\
+    e.  \\
+
+B\\
+	a. teacher(Ahmet Metin) $\land$ $\forall$y($\neg$teaches(Ahmet Metin,y))\\
+    b. $\exists$x(teacher(x) $\land$ (teaches(x,y) $\land$ enjoys(x,y)))\\
+    c. $\forall$x(teacher(x) $\rightarrow$ $\forall$y(teaches(x,y)))\\
+    d. $\forall$x(takes(x,y) $\rightarrow$ student(x))\\   
+    e. $\forall$x(teacher(x) $\rightarrow$ ($\exists$a$\exists$b(teaches(x,a) $\land$ teaches(x,b) $\land$ a$\ne$b) $\land$ $\forall$z(teaches(x,z) $\rightarrow$ (z=a $\lor$ z=b))))\\
+\section*{Answer 4}
+
+\[
+ \begin{nd}
+   \hypo{1}  {p}   		
+   \hypo{2}  {p \rightarrow (r \rightarrow q)}
+   \have{3}  {r \rightarrow q}	\ie{1,2}		
+   \open                              
+   \hypo{4}  {\neg q}
+   \open
+   \hypo{5}  {r}
+   \have{6}  {q}        \ie{3,5}
+   \have{7}  {\bot}     \ne{4,6} 
+   \close                   
+   \have{8} {\neg r}	\ni{5-7}
+   \close
+   \have{9} {\neg q \rightarrow \neg r} \ii{4-8}
+   
+                    
+ \end{nd}
+\]
+\section*{Answer 5}
+
+
+
+\end{document}
+
+​
+

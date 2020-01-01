@@ -1,0 +1,189 @@
+﻿\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Koray Can Yurtseven\\
+Id Number :  2099547\\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+
+$\,$ $\,$ $\,$ $\,$Let $n$=1. Then:\\
+
+$\quad$  
+	$\displaystyle\sum_{j=1}^1$$j(j+1)(j+2)$$\ldots$$(j+k-1)$ = $\frac{1(1+1)(1+2)\ldots(1+k)}{(k+1)}$\\
+
+$\quad$
+	$1.2.3\ldots(1+k-1)$ = $\frac{1.2.3\ldots(1+k)}{(k+1)}$\\
+    
+$\quad$
+	$k!$ = $k!$ \\
+    
+So, it works for $n=1$.\\
+
+Assume, for $n=t$ holds, that is:\\
+
+$\quad$  
+	$\displaystyle\sum_{j=1}^t$$j(j+1)(j+2)$$\ldots$$(j+k-1)$ = $\frac{t(t+1)(t+2)\ldots(t+k)}{(k+1)}$\\
+    
+$\qquad$
+
+We need to prove for $n=t+1$ holds.\\
+
+$\quad$  
+	$\displaystyle\sum_{j=1}^{t+1}$$j(j+1)(j+2)$$\ldots$$(j+k-1)$ = $\frac{(t+1)(t+2)(t+3)\ldots(t+1+k)}{(k+1)}$\\
+    
+$\quad$  
+	$\displaystyle\sum_{j=1}^{t+1}$$j(j+1)(j+2)$$\ldots$$(j+k-1)$ =
+    $\displaystyle\sum_{j=1}^t$$j(j+1)(j+2)$$\ldots$$(j+k-1)$ $+$ $(t+1)(t+2)\ldots(t+k)$\\
+    
+From our assumption:\\
+
+$\quad$  
+	$\displaystyle\sum_{j=1}^{t+1}$$j(j+1)(j+2)$$\ldots$$(j+k-1)$ =  $\frac{t(t+1)(t+2)\ldots(t+k)}{(k+1)}$ $+$ $(t+1)(t+2)\ldots(t+k)$\\
+    
+$\quad$     
+    $\frac{t(t+1)(t+2)\ldots(t+k)}{(k+1)}$ $+$ $(t+1)(t+2)\ldots(t+k)$ = $\frac{(t+1)(t+2)(t+3)\ldots(t+1+k)}{(k+1)}$\\
+    
+$\quad$    
+    $(t+1)(t+2)\ldots(t+k)$ = $\frac{(t+1)(t+2)(t+3)\ldots(t+1+k)}{(k+1)}$ -  $\frac{t(t+1)(t+2)\ldots(t+k)}{(k+1)}$ \\
+    
+$\quad$
+	$(t+1)(t+2)\ldots(t+k)$ = $\frac{((t+1)(t+2)(t+3)\ldots(t+k))(t+1+k-t)}{(k+1)}$ \\
+    
+$\quad$  
+    $(t+1)(t+2)\ldots(t+k)$ = $\frac{((t+1)(t+2)(t+3)\ldots(t+k))(1+k)}{(k+1)}$ \\
+    
+$\quad$  
+	$(t+k)!$ = $(t+k)!$\\
+    
+It holds. By principle of induction, we've proved the statement.\\
+
+\section*{Answer 2}
+
+$\,$ $\,$ $\,$ $\,$\underline{Base Case}:\\
+
+$\quad$
+	$n=3$, $\quad$ $H_3$= 5$H_2$+ 5$H_1$ + 63$H_0$ \\
+    
+For given $H_0$, $H_1$ and $H_2$, we've calculated $H_3$= 103 which is smaller than $7^3$.\\
+    
+\,
+\underline{Inductive Case}:\\
+
+Suppose that it is true for every value of $n$ from 0 to $k$. We need to show that $H_{k+1}$ $\leq$ $7^{k+1}$.\\
+    
+$H_k$ = 5$H_{k-1}$+ 5$H_{k-2}$ + 63$H_{k-3}$ , where $H_{k}$ $\leq$ $7^{k}$\\
+
+$H_{k-1}$ = 5$H_{k-2}$+ 5$H_{k-3}$ + 63$H_{k-4}$ , where $H_{k-1}$ $\leq$ $7^{k-1}$\\
+
+$H_{k-2}$ = 5$H_{k-3}$+ 5$H_{k-4}$ + 63$H_{k-5}$ , where $H_{k-2}$ $\leq$ $7^{k-2}$\\
+
+$H_{k+1}$ = 5$H_{k}$+ 5$H_{k-1}$ + 63$H_{k-2}$\\
+
+From assumption 5$H_{k}$ $\leq$ 5.$7^{k}$, 5$H_{k-1}$ $\leq$ 5.$7^{k-1}$ and 63$H_{k-2}$ $\leq$ 63.$7^{k-2}$.\\
+
+$H_{k+1}$ $\leq$ 5.$7^{k}$ + 5.$7^{k-1}$ + 63.$7^{k-2}$\\
+
+$H_{k+1}$ $\leq$ 5.$7^{k}$ + 5.$7^{k-1}$ + 9.$7^{k-1}$\\
+
+$H_{k+1}$ $\leq$ 5.$7^{k}$ + 14.$7^{k-1}$\\
+
+$H_{k+1}$ $\leq$ 5.$7^{k}$+ 2.$7^{k}$\\
+
+$H_{k+1}$ $\leq$ 7.$7^{k}$\\
+
+$H_{k+1}$ $\leq$ $7^{k+1}$\\
+
+Thus, we've shown that $H_{k+1}$ $\leq$ $7^{k+1}$ is true. By principle of strong induction, $H_{n}$ is true for all integers $n$ $\geq$ 0.\\
+
+\section*{Answer 3}
+\textbf{a)}\\
+
+Since we are expected to pick at least Discrete Mathematic textbook, we can approach this question like this.\\
+
+We have 12 textbooks and we are expected to pick 4 of them. $\binom{12}{4}$ is total way of picking 4 textbooks.\\
+
+We have 7 Signal and Systems textbooks. So, if we pick all books from this group, we don't have any Discrete Mathematics book in our hands. $\binom{7}{4}$ is total way of picking 4 Signal and Systems textbooks.\\
+
+If we subtract these from each other, we will be in a situation where we have at least 1 Discrete Mathematics textbook in our collection.\\
+
+Thus $\binom{12}{4}$ - $\binom{7}{4}$ = 460 ways to make a collection.\\
+\textbf{b)}\\
+
+This collection can be done in 3 possible ways.\\
+
+case $i$: 1 Discrete Mathematics book and 3 Signals and Systems book is chosen. This collection is equal to $\binom{5}{1}$ . $\binom{7}{3}$ because of the product rule.\\
+
+case $ii$: 2 Discrete Mathematics book and 2 Signals and Systems book is chosen. This collection is equal to $\binom{5}{2}$ . $\binom{7}{2}$ because of the product rule.\\
+
+case $iii$: 3 Discrete Mathematics book and 1 Signals and Systems book is chosen. This collection is equal to $\binom{5}{3}$ . $\binom{7}{1}$ because of the product rule.\\
+
+Together, using sum rule, in $\binom{5}{1}$ . $\binom{7}{3}$ + $\binom{5}{2}$ . $\binom{7}{2}$ + $\binom{5}{3}$ . $\binom{7}{1}$ = 455 different ways we can make this collection.
+
+
+\section*{Answer 4}
+
+Let $a_n$ denote the number of different strings of length n that composed of only 2's and 3's and having even number of 3's.\\
+
+$a_n$ = $2^{n-1}$\\
+
+\section*{Answer 5}
+First, write $a_n$ as below:\\
+
+$x^3$ = $4x^2$ + $x$ - $4$\\
+
+$x^3$ - $4x^2$ - $x$ + $4$ = 0\\
+
+$(x^2-1)$$(x-4)$ = 0\\
+
+Roots of this equation are $x = 1$, $x = -1$ and $x = 4$\\
+
+$a_n$= a.$(1)^n$ + b.$(-1)^n$ + c.$(4)^n$\\
+
+We know that $a_0$ = 4, $a_1$ = 8 and $a_2$ = 34\\
+
+$a_0$ = a.$(1)^0$ + b.$(-1)^0$ + c.$(4)^0$\\
+
+4 = $a + b + c$\\
+
+$a_1$ = a.$(1)^1$ + b.$(-1)^1$ + c.$(4)^1$\\
+
+8 = $a - b + 4c$\\
+
+$a_2$ = a.$(1)^2$ + b.$(-1)^2$ + c.$(4)^2$\\
+
+34 = $a + b + 16c$\\
+
+Solving these equations, we get $a = 1$ , $b = 1$ and $c = 2$.\\
+
+Thus, $a_n$ = 1.$(1)^0$ + 1.$(-1)^0$ + 2.$(4)^0$\\
+
+
+\section*{Answer 6}
+
+
+
+\end{document}
+
+​
+

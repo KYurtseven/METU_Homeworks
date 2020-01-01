@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\arinc\Desktop\counter\counter.ncd
+OUTFILE=C:\Users\arinc\Desktop\counter\counter.bit
+FAMILY=Spartan3E
+PART=xc3s100e-5cp132
+WORKINGDIR=C:\Users\arinc\Desktop\counter
+LICENSE=WebPack
+USER_INFO=0_0_850

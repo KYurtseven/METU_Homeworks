@@ -1,0 +1,5 @@
+set -tmpdir "D:/Google Downloads/lab4_cow/lab4_cow/xst/projnav.tmp"
+set -xsthdpdir "D:/Google Downloads/lab4_cow/lab4_cow/xst"
+elaborate
+-ifn Memory.prj
+-ifmt mixed

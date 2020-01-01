@@ -1,0 +1,17 @@
+---------- How-to Guide ----------
+1) Folder layout as image file is given in the same archive that contains this guide.
+
+2) input / output folder is provided by your colleague Yasin Fatih ALPUL. You can find the link posted by him on COW.
+
+3) run the following command to test your implementation: $bash automata.sh
+(remove the dollar sign)
+
+4) myoutput folder is intentionally not cleared after the tester ends for you to manually compare your outputs with output folder. Further tests will override the myoutputs folder with your newly generated outputs, unless your !!new!! implementation fails.
+TL;DR -> be sure that your updated code compiles, else tester will test with previous outputs of yours.
+
+5) Tester is provided with no guarantee, with assumption that what is provided by your mentioned colleague has appropriate results.
+
+
+Happy Codings =)
+Ülfet
+

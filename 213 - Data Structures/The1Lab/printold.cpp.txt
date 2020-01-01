@@ -1,0 +1,11 @@
+#include "quiz1.hpp"
+
+void printReverse(ListNode* p){
+   while(p){
+       ListNode* r = new ListNode(p->val);
+       printReverse(p->next);
+       cout << (r->val) << "->";
+    }
+    cout << endl;
+    return;
+}
