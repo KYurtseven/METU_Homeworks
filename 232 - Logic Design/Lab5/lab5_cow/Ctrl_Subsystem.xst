@@ -1,5 +1,0 @@
-set -tmpdir "D:/Google Downloads/232/lab5_cow/lab5_cow/xst/projnav.tmp"
-set -xsthdpdir "D:/Google Downloads/232/lab5_cow/lab5_cow/xst"
-elaborate
--ifn Ctrl_Subsystem.prj
--ifmt mixed
